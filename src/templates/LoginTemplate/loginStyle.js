@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
+const LogoImage = styled.img`
+  width: 100%;
+`;
+
 const LogoSection = styled.div`
-  border: 1px solid red;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   width: 40%;
 `;
 
@@ -9,10 +15,10 @@ const InstructionsSection = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 `;
 
 const FormSection = styled.div`
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -30,6 +36,7 @@ const styles = {
   FormSection,
   LogoSection,
   InstructionsSection,
+  LogoImage,
 };
 
 export default styles;

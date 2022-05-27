@@ -3,6 +3,7 @@ import styles from './loginStyle';
 import LoginForm from '../../organisms/LoginForm';
 import Title from '../../atoms/Title';
 import Paragraph from '../../atoms/Paragraph';
+import Logo from '../../Images/Logo.png';
 
 const LoginTemplate = () => {
   const {
@@ -10,10 +11,13 @@ const LoginTemplate = () => {
     LoginStyle,
     LogoSection,
     InstructionsSection,
+    LogoImage,
   } = styles;
   return (
     <LoginStyle>
-      <LogoSection></LogoSection>
+      <LogoSection>
+        <LogoImage src={Logo} />
+      </LogoSection>
       <FormSection>
         <InstructionsSection>
           <Title>Bem-vindo!</Title>

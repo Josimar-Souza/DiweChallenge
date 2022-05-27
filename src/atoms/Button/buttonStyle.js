@@ -6,6 +6,7 @@ const ButtonStyle = styled.button`
   background: ${( { backGroundColor }) => backGroundColor};
   color: ${({ textColor }) => textColor};
   height: ${({ height }) => height};
+  margin 10px 0;
   padding: 10px;
   transition: 0.2s;
   width: ${({ width }) => width};
