@@ -1,8 +1,9 @@
 import React from 'react';
+import LoginTemplate from './templates/LoginTemplate';
 
 const App = () => {
   return (
-    <h1>Diwe Challenge</h1>
+    <LoginTemplate />
   );
 }
 
