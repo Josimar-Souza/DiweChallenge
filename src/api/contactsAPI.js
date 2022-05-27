@@ -47,6 +47,16 @@ class ContactsAPI {
 
 		return data;
 	}
+
+	async deleteContact(id, token) {
+		const { data } = await this.api.delete(`/contacts/${id}`, {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+
+		return data;
+	}
 }
 
 export default ContactsAPI;
