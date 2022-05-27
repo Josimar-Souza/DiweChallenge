@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => {
   return (
-    <h1>Diwe Challange</h1>
+    <h1>Diwe Challenge</h1>
   );
 }
 
