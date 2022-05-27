@@ -27,6 +27,16 @@ class ContactsAPI {
 
         console.log(data);
     }
+
+    async createNewContact(contactData, token) {
+        const { data } = await this.api.post('/contacts', contactData, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+
+        return data;
+    }
 }
 
 export default ContactsAPI;
