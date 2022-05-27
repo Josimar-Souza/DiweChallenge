@@ -8,14 +8,24 @@ class ContactsAPI {
         });
     }
 
-    async getAllContacs(token) {
-        const response = await this.api.get('/contacts', {
+    async getAllContacts(token) {
+        const { data } = await this.api.get('/contacts', {
             headers: {
-                authorization: token,
+                Authorization: `Bearer ${token}`,
             },
         });
 
-        console.log(response);
+        return data;
+    }
+
+    async getContactById(id, token) {
+        const { data } = await this.api.get(`/contacts/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+
+        console.log(data);
     }
 }
 
