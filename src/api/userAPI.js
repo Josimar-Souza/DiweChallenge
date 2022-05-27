@@ -1,4 +1,5 @@
 import axios from 'axios';
+import ErrorCreator from '../utils/ErrorCreator';
 
 class UserAPI{
     constructor(baseURL, timeout) {
@@ -9,8 +10,13 @@ class UserAPI{
     }
 
     async login(userData) {
-        const { data: { token } } = await this.api.post('/auth/login', userData);
-        return token;
+        try {
+					const { data: { token } } = await this.api.post('/auth/login', userData);
+					return token;
+        } catch(error) {
+					console.log(error.message);
+					return new ErrorCreator('Não foi possível logar na sua conta')
+        }
     }
 }
 
