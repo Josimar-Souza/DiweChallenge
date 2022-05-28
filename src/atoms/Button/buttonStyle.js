@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ButtonStyle = styled.button`
   border-radius: 5px;
   border: none;
-  background: ${( { backGroundColor }) => backGroundColor};
+  background-color: ${( { backGroundColor }) => backGroundColor};
   color: ${({ textColor }) => textColor};
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
