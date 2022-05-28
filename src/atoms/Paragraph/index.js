@@ -7,11 +7,13 @@ const Paragraph = (props) => {
     children,
     textColor,
     fontSize,
+    fontWeight,
   } = props;
   return (
     <ParagraphStyle
       textColor={ textColor }
       fontSize={ fontSize }
+      fontWeight={ fontWeight }
     >
       { children }
     </ParagraphStyle>
@@ -21,12 +23,14 @@ const Paragraph = (props) => {
 Paragraph.defaultProps = {
   textColor: '#12295B',
   fontSize: '1.5rem',
+  fontWeight: '600',
 }
 
 Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   textColor: PropTypes.string,
   fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
 }
 
 export default Paragraph;
