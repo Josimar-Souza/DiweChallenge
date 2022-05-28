@@ -6,10 +6,28 @@ const InfoContainer = styled.div`
   width: 100%;
 `;
 
+const ArrowIcon = styled.img`
+  filter: invert(25%) sepia(6%) saturate(6654%) hue-rotate(179deg) brightness(92%) contrast(90%);
+  width: 0.8rem;
+`;
+
+const ContactsTable = styled.table`
+  border-collapse: collapse;
+  margin: 20px 0;
+  width: 80%;
+`;
+
+const TableHeaderRow = styled.tr`
+  border-bottom: 1.5px solid #ADB5BD;
+`;
+
 const ContactsListStyle = styled.div`
+  align-items: center;
   border-radius: 5px;
   background-color: white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
   height: 200px;
   margin: 50px 0;
   padding: 20px;
@@ -18,7 +36,10 @@ const ContactsListStyle = styled.div`
 
 const styles = {
   ContactsListStyle,
-  InfoContainer
+  InfoContainer,
+  ContactsTable,
+  TableHeaderRow,
+  ArrowIcon,
 };
 
 export default styles;
