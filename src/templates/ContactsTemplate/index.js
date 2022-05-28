@@ -1,13 +1,16 @@
 import React from 'react';
-import ContactsTemplateStyle from './ContactsTemplateStyle';
+import styles from './ContactsTemplateStyle';
 import Header from '../../organisms/Header';
 import ContactsList from '../../organisms/ContactsList';
 
 const ContactsTemplate = () => {
+  const { ContactsListContainer, ContactsTemplateStyle } = styles;
   return (
     <ContactsTemplateStyle>
       <Header backPath='/login' />
-      <ContactsList />
+      <ContactsListContainer>
+        <ContactsList />
+      </ContactsListContainer>
     </ContactsTemplateStyle>
   )
 }

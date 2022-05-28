@@ -13,7 +13,7 @@ const ContactsListStyle = styled.div`
   height: 200px;
   margin: 50px 0;
   padding: 20px;
-  width: 50%;
+  width: 80%;
 `;
 
 const styles = {
