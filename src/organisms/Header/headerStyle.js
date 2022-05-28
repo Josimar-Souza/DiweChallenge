@@ -7,6 +7,7 @@ const HeaderStyle = styled.div`
   display: flex;
   height: 4rem;
   padding: 10px;
+  width: 100%;
 `;
 
 export default HeaderStyle;

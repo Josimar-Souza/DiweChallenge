@@ -5,7 +5,7 @@ import Header from '../../organisms/Header';
 const ContactsTemplate = () => {
   return (
     <ContactsTemplateStyle>
-      <Header />
+      <Header backPath='/login' />
     </ContactsTemplateStyle>
   )
 }
