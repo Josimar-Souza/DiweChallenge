@@ -31,6 +31,7 @@ const LoginForm = () => {
       return;
     }
 
+    localStorage.setItem('token', token);
     navigate('/contacts');
   }
 
