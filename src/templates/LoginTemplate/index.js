@@ -17,7 +17,7 @@ const LoginTemplate = () => {
   return (
     <LoginStyle>
       <LogoSection>
-        <LogoImage src={Logo} />
+        <LogoImage src={Logo} alt='Logo da plataforma' />
       </LogoSection>
       <FormSection>
         <InstructionsSection>
