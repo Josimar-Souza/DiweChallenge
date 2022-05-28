@@ -5,6 +5,8 @@ const ButtonStyle = styled.button`
   border: none;
   background: ${( { backGroundColor }) => backGroundColor};
   color: ${({ textColor }) => textColor};
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   height: ${({ height }) => height};
   margin 10px 0;
   padding: 10px;
