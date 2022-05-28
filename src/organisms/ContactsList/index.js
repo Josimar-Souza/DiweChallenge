@@ -30,13 +30,15 @@ const ContactsList = () => {
         </Button>
       </InfoContainer>
       <ContactsTable>
-        <TableHeaderRow>
-          <TableHeader>#<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
-          <TableHeader>Nome<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
-          <TableHeader>Celular<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
-          <TableHeader>Email<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
-          <TableHeader>Ações</TableHeader>
-        </TableHeaderRow>
+        <thead>
+          <TableHeaderRow>
+            <TableHeader>#<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
+            <TableHeader>Nome<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
+            <TableHeader>Celular<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
+            <TableHeader>Email<ArrowIcon src={ ArrowDown } alt="Icone seta pra baixo na tabela" /></TableHeader>
+            <TableHeader>Ações</TableHeader>
+          </TableHeaderRow>
+        </thead>
       </ContactsTable>
     </ContactsListStyle>
   );
