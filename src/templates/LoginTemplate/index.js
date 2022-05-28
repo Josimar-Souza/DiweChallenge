@@ -13,6 +13,7 @@ const LoginTemplate = () => {
     InstructionsSection,
     LogoImage,
   } = styles;
+
   return (
     <LoginStyle>
       <LogoSection>
