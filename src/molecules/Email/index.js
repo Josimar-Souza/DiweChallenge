@@ -10,6 +10,7 @@ const Email = (props) => {
     height,
     onChange,
     value,
+    name,
   } = props;
   return (
     <EmailStyled
@@ -21,6 +22,8 @@ const Email = (props) => {
         placeHolder='Digite seu email'
         onChange={ onChange }
         value={ value }
+        type='email'
+        name={ name }
       />
     </EmailStyled>
   );
@@ -29,6 +32,7 @@ const Email = (props) => {
 Email.defaultProps = {
   width: '100%',
   height: 'fit-content',
+  name: '',
 }
 
 Email.propTypes = {
@@ -36,6 +40,7 @@ Email.propTypes = {
   height: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  name: PropTypes.string,
 }
 
 export default Email;

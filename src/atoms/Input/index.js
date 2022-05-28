@@ -10,6 +10,8 @@ const Input = (props) => {
     disabled,
     width,
     height,
+    type,
+    name,
   } = props;
   return (
     <InputStyle
@@ -19,6 +21,8 @@ const Input = (props) => {
       disabled={ disabled }
       width={ width }
       height={ height }
+      type={ type }
+      name={ name }
     />
   );
 };
@@ -28,6 +32,8 @@ Input.defaultProps = {
   disabled: false,
   width: '100%',
   height: '20px',
+  type: 'text',
+  name: '',
 };
 
 Input.propTypes = {
@@ -37,6 +43,8 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   width: PropTypes.string,
   height: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default Input;

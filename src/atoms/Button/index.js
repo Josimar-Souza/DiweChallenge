@@ -10,6 +10,7 @@ const Button = (props) => {
     height,
     backGroundColor,
     textColor,
+    type,
   } = props;
 
   return (
@@ -19,6 +20,7 @@ const Button = (props) => {
       height={ height }
       backGroundColor={ backGroundColor }
       textColor={ textColor }
+      type={ type }
     >
       { children }
     </ButtonStyle>
@@ -30,6 +32,7 @@ Button.defaultProps = {
   height: 'fit-content',
   backGroundColor: '#12295B',
   textColor: 'white',
+  type: 'button',
 }
 
 Button.propTypes = {
@@ -38,7 +41,8 @@ Button.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   backGroundColor: PropTypes.string,
-  textColor:PropTypes.string,
+  textColor: PropTypes.string,
+  type: PropTypes.string,
 }
 
 export default Button;

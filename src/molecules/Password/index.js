@@ -10,6 +10,7 @@ const Password = (props) => {
     height,
     onChange,
     value,
+    name,
   } = props;
   return (
     <PasswordStyled
@@ -21,6 +22,8 @@ const Password = (props) => {
         placeHolder='Digite sua senha'
         onChange={ onChange }
         value={ value }
+        type="password"
+        name={ name }
       />
     </PasswordStyled>
   );
@@ -29,6 +32,7 @@ const Password = (props) => {
 Password.defaultProps = {
   width: '100%',
   height: 'fit-content',
+  name: '',
 }
 
 Password.propTypes = {
@@ -36,6 +40,7 @@ Password.propTypes = {
   height: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  name: PropTypes.string,
 }
 
 export default Password;
