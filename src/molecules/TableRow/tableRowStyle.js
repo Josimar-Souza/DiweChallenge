@@ -1,8 +1,26 @@
 import styled from 'styled-components';
 
-const RowCellStyle = styled.td``;
+const getBackgroundColor = ({ index }) => {
+	if ((index % 2) == 0) return '#F1F3F5';
+	
+	return 'white';
+};
 
-const TableRowStyle = styled.tr``;
+const getCellColor = ({ isIndex }) => {
+	if (isIndex) return '#244677';
+	
+	return 'black';
+}
+
+const RowCellStyle = styled.td`
+	color: ${getCellColor};
+	font-weight: 700;
+	padding: 10px;
+`;
+
+const TableRowStyle = styled.tr`
+	background-color: ${getBackgroundColor};
+`;
 
 const styles = {
 	TableRowStyle,

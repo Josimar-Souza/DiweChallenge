@@ -39,8 +39,8 @@ const TableRow = ({ contact, index }) => {
 	};
 	
 	return (
-		<TableRowStyle>
-			<RowCellStyle>{getIndexNumber(index + 1)}</RowCellStyle>
+		<TableRowStyle index={ index }>
+			<RowCellStyle isIndex>{getIndexNumber(index + 1)}</RowCellStyle>
 			<RowCellStyle>{contact.name}</RowCellStyle>
 			<RowCellStyle>{getPhoneNumber(contact.mobile)}</RowCellStyle>
 			<RowCellStyle>{contact.email}</RowCellStyle>

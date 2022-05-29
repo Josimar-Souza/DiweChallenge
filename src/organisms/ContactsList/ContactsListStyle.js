@@ -13,6 +13,7 @@ const ArrowIcon = styled.img`
 
 const ContactsTable = styled.table`
 	border-collapse: collapse;
+	font-family: 'Montserrat', sans-serif;
 	margin: 20px 0;
 	width: 80%;
 `;
@@ -28,7 +29,6 @@ const ContactsListStyle = styled.div`
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	display: flex;
 	flex-direction: column;
-	height: 200px;
 	margin: 50px 0;
 	padding: 20px;
 	width: 80%;
