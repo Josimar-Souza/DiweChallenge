@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './ContactsListStyle';
 import Paragraph from '../../atoms/Paragraph';
 import Button from '../../atoms/Button';
 import TableHeader from '../../atoms/TableHeader';
 import ArrowDown from '../../Images/Icons/chevron-down.svg';
 
-const ContactsList = () => {
+const ContactsList = ({ contacts }) => {
 	const {
 		ContactsListStyle,
 		InfoContainer,
 		ContactsTable,
 		TableHeaderRow,
 		ArrowIcon,
-	} = styles;
+	} = styles; 
 
 	return (
 		<ContactsListStyle>
@@ -42,6 +43,10 @@ const ContactsList = () => {
 			</ContactsTable>
 		</ContactsListStyle>
 	);
+};
+
+ContactsList.propTypes = {
+	contacts: PropTypes.shape([]),
 };
 
 export default ContactsList;
