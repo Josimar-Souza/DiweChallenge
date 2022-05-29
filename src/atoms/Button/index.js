@@ -11,6 +11,7 @@ const Button = (props) => {
     backGroundColor,
     textColor,
     type,
+    margin,
   } = props;
 
   return (
@@ -21,6 +22,7 @@ const Button = (props) => {
       backGroundColor={ backGroundColor }
       textColor={ textColor }
       type={ type }
+      margin = { margin }
     >
       { children }
     </ButtonStyle>
@@ -33,6 +35,7 @@ Button.defaultProps = {
   backGroundColor: '#12295B',
   textColor: 'white',
   type: 'button',
+  margin: '10px 0',
 }
 
 Button.propTypes = {
@@ -43,6 +46,7 @@ Button.propTypes = {
   backGroundColor: PropTypes.string,
   textColor: PropTypes.string,
   type: PropTypes.string,
+  margin: PropTypes.string,
 }
 
 export default Button;

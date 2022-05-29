@@ -11,7 +11,7 @@ const ButtonStyle = styled.button`
   font-weight: 700;
   height: ${({ height }) => height};
   justify-content: space-around;
-  margin 10px 0;
+  margin ${({ margin }) => margin};
   padding: 10px;
   transition: 0.2s;
   width: ${({ width }) => width};

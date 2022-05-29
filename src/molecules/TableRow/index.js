@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './tableRowStyle';
+import editIcon from '../../Images/Icons/edit.svg';
+import trashIcon from '../../Images/Icons/trash.svg';
+import Button from '../../atoms/Button';
 
 const TableRow = ({ contact, index }) => {
-	const { TableRowStyle, RowCellStyle } = styles;
+	const { TableRowStyle, RowCellStyle, ActionsSection } = styles;
 	
 	const getIndexNumber = (number) => {
 		if (number < 10) return `0${number}`;
@@ -43,6 +46,28 @@ const TableRow = ({ contact, index }) => {
 			<RowCellStyle>{contact.name}</RowCellStyle>
 			<RowCellStyle>{getPhoneNumber(contact.mobile)}</RowCellStyle>
 			<RowCellStyle>{contact.email}</RowCellStyle>
+			<RowCellStyle>
+				<ActionsSection>
+					<Button
+						backGroundColor='rgba(0, 0, 0, 0)'
+						textColor='black'
+						width='40%'
+						margin='0 10px'
+					>
+						<img src={ editIcon } />
+						Editar
+					</Button>
+					<Button
+						backGroundColor='rgba(0, 0, 0, 0)'
+						textColor='black'
+						width='40%'
+						margin='0 10px'
+					>
+						<img src={ trashIcon } />
+						Excluir
+					</Button>
+				</ActionsSection>
+			</RowCellStyle>
 		</TableRowStyle>
 	);
 };
