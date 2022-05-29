@@ -4,7 +4,6 @@ import styles from './tableRowStyle';
 
 const TableRow = ({ contact, index }) => {
 	const { TableRowStyle, RowCellStyle } = styles;
-	console.log(contact);
 	
 	const getIndexNumber = (number) => {
 		if (number < 10) return `0${number}`;

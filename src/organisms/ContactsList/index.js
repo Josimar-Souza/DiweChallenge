@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ContactsListStyle';
 import Paragraph from '../../atoms/Paragraph';
@@ -8,13 +9,19 @@ import ArrowDown from '../../Images/Icons/chevron-down.svg';
 import TableRow from '../../molecules/TableRow';
 
 const ContactsList = ({ contacts }) => {
+	const navigate = useNavigate();
+
 	const {
 		ContactsListStyle,
 		InfoContainer,
 		ContactsTable,
 		TableHeaderRow,
 		ArrowIcon,
-	} = styles; 
+	} = styles;
+	
+	const onAddButtonClick = () => {
+		navigate('/add-contact');
+	};
 
 	return (
 		<ContactsListStyle>
@@ -27,6 +34,7 @@ const ContactsList = ({ contacts }) => {
 				<Button
 					width='30%'
 					backGroundColor='#4263EB'
+					onClick={ onAddButtonClick }
 				>
 					Adicionar novo contato
 				</Button>

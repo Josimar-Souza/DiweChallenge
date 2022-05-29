@@ -15,7 +15,7 @@ const ContactsTable = styled.table`
 	border-collapse: collapse;
 	font-family: 'Montserrat', sans-serif;
 	margin: 20px 0;
-	width: 80%;
+	width: 90%;
 `;
 
 const TableHeaderRow = styled.tr`
@@ -31,7 +31,7 @@ const ContactsListStyle = styled.div`
 	flex-direction: column;
 	margin: 50px 0;
 	padding: 20px;
-	width: 80%;
+	width: 90%;
 `;
 
 const styles = {
