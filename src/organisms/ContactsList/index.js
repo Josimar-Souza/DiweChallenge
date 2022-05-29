@@ -31,7 +31,7 @@ const ContactsList = ({ contacts }) => {
 	} = styles;
 	
 	const onAddButtonClick = () => {
-		navigate('/add-contact');
+		navigate('/contacts/add');
 	};
 	
 	const onRemoveButtonClick = (id) => {
