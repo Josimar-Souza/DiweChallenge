@@ -52,4 +52,4 @@ InputLabel.propTypes = {
 	type: PropTypes.string,
 }
 
-export default Email;
+export default InputLabel;
