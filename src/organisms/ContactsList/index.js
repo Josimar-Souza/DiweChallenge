@@ -5,6 +5,7 @@ import Paragraph from '../../atoms/Paragraph';
 import Button from '../../atoms/Button';
 import TableHeader from '../../atoms/TableHeader';
 import ArrowDown from '../../Images/Icons/chevron-down.svg';
+import TableRow from '../../molecules/TableRow';
 
 const ContactsList = ({ contacts }) => {
 	const {
@@ -40,13 +41,20 @@ const ContactsList = ({ contacts }) => {
 						<TableHeader>Ações</TableHeader>
 					</TableHeaderRow>
 				</thead>
+				<tbody>
+					{
+						contacts.map(
+							(contact, index) => <TableRow key={ contact.id } index={ index } contact={ contact } />,
+						)
+					}
+				</tbody>
 			</ContactsTable>
 		</ContactsListStyle>
 	);
 };
 
 ContactsList.propTypes = {
-	contacts: PropTypes.shape([]),
+	contacts: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default ContactsList;
