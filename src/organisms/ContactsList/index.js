@@ -11,7 +11,7 @@ import Modal from '../../molecules/Modal';
 
 const ContactsList = ({ contacts }) => {
 	const navigate = useNavigate();
-	const [modalDisplay, setModalDisplay] = useState('none');
+	const [modalDisplay, setModalDisplay] = useState({ state: 'none', id: 0 });
 	const {
 		ContactsListStyle,
 		InfoContainer,
@@ -24,14 +24,25 @@ const ContactsList = ({ contacts }) => {
 		navigate('/add-contact');
 	};
 	
-	const onRemoveButtonClick = () => {
-		console.log('Clicou pra remover!');
-		setModalDisplay('block');
+	const onRemoveButtonClick = (id) => {
+		setModalDisplay({ state: 'block', id });
+	}
+	
+	const closeModal = () => {
+		setModalDisplay({ state: 'none', id: 0 });
+	};
+	
+	const removeContact = () => {
+		console.log('Remover')
 	}
 
 	return (
 		<ContactsListStyle>
-			<Modal display={ modalDisplay } />
+			<Modal
+				display={ modalDisplay.state }
+				closeModal={ closeModal }
+				removeContact={ removeContact }
+			/>
 			<InfoContainer>
 				<Paragraph
 					fontWeight='700'
