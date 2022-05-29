@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './tableRowStyle';
 import editIcon from '../../Images/Icons/edit.svg';
 import trashIcon from '../../Images/Icons/trash.svg';
 import Button from '../../atoms/Button';
 
-const TableRow = ({ contact, index }) => {
+const TableRow = ({ contact, index, onRemoveButtonClick }) => {
 	const { TableRowStyle, RowCellStyle, ActionsSection } = styles;
+	const navigate = useNavigate();
 	
 	const getIndexNumber = (number) => {
 		if (number < 10) return `0${number}`;
@@ -40,6 +42,10 @@ const TableRow = ({ contact, index }) => {
 		return formattedNumber;
 	};
 	
+	const onEditButtonClick = () => {
+		navigate(`/contacts/edit/${contact.id}`)
+	}
+	
 	return (
 		<TableRowStyle index={ index }>
 			<RowCellStyle isIndex>{getIndexNumber(index + 1)}</RowCellStyle>
@@ -53,6 +59,7 @@ const TableRow = ({ contact, index }) => {
 						textColor='black'
 						width='40%'
 						margin='0 10px'
+						onClick={ onEditButtonClick }
 					>
 						<img src={ editIcon } />
 						Editar
@@ -62,6 +69,7 @@ const TableRow = ({ contact, index }) => {
 						textColor='black'
 						width='40%'
 						margin='0 10px'
+						onClick={ () => onRemoveButtonClick(contact.id) }
 					>
 						<img src={ trashIcon } />
 						Excluir
@@ -77,8 +85,10 @@ TableRow.propTypes = {
 		name: PropTypes.string.isRequired,
 		mobile: PropTypes.string.isRequired,
 		email: PropTypes.string.isRequired,
+		id: PropTypes.number.isRequired,
 	}).isRequired,
 	index: PropTypes.number.isRequired,
+	onRemoveButtonClick: PropTypes.func.isRequired,
 }
 
 export default TableRow;

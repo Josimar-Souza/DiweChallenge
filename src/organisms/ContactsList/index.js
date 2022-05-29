@@ -22,6 +22,10 @@ const ContactsList = ({ contacts }) => {
 	const onAddButtonClick = () => {
 		navigate('/add-contact');
 	};
+	
+	const onRemoveButtonClick = () => {
+		console.log('Clicou pra remover!');
+	}
 
 	return (
 		<ContactsListStyle>
@@ -52,7 +56,13 @@ const ContactsList = ({ contacts }) => {
 				<tbody>
 					{
 						contacts.map(
-							(contact, index) => <TableRow key={ contact.id } index={ index } contact={ contact } />,
+							(contact, index) =>
+								<TableRow
+									key={ contact.id }
+									index={ index }
+									contact={ contact }
+									onRemoveButtonClick={ onRemoveButtonClick }
+								/>,
 						)
 					}
 				</tbody>
