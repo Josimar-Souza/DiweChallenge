@@ -5,18 +5,21 @@ import PublicRoutes from './publicRoutes';
 import PrivateRoutes from './privateRoutes';
 
 const Routes = () => {
-  return (
-    <RouterRotes>
-      <Route exact path='/' element={ <Navigate to='/login' /> } />
-      <Route exact path='/login' element={ <PublicRoutes /> }>
-        <Route exact path='/login' element={ <Pages.LoginPage /> } />
-      </Route>
+	return (
+		<RouterRotes>
+			<Route exact path='/' element={ <Navigate to='/login' /> } />
+			<Route exact path='/login' element={ <PublicRoutes /> }>
+				<Route exact path='/login' element={ <Pages.LoginPage /> } />
+			</Route>
 
-      <Route exact path='/contacts' element={ <PrivateRoutes /> }>
-        <Route exact path='/contacts' element={ <Pages.ContactsPage /> } />
-      </Route>
-    </RouterRotes>
-  );
+			<Route exact path='/contacts' element={ <PrivateRoutes /> }>
+				<Route exact path='/contacts' element={ <Pages.ContactsPage /> } />
+			</Route>
+			<Route exact path='/contacts/add' element={ <PrivateRoutes /> }>
+        <Route exact path='/contacts/add' element={ <Pages.AddContactsPage /> } />
+			</Route>
+		</RouterRotes>
+	);
 }
 
 export default Routes;
