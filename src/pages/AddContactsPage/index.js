@@ -1,8 +1,9 @@
 import React from 'react';
+import AddContactTemplate from '../../templates/AddContactTemplate';
 
 const AddContactsPage = () => {
 	return (
-		<h1>Add Contacts Page</h1>
+		<AddContactTemplate />
 	);
 }
 
