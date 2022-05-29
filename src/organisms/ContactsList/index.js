@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ContactsListStyle';
@@ -8,10 +9,19 @@ import TableHeader from '../../atoms/TableHeader';
 import ArrowDown from '../../Images/Icons/chevron-down.svg';
 import TableRow from '../../molecules/TableRow';
 import Modal from '../../molecules/Modal';
+import { addContacts } from '../../redux/reducers/contactsReducer';
+import ContactsAPI from '../../api/contactsAPI';
+import ErrorCreator from '../../utils/ErrorCreator';
+
+const baseURL = process.env.REACT_APP_BASE_URL;
 
 const ContactsList = ({ contacts }) => {
 	const navigate = useNavigate();
 	const [modalDisplay, setModalDisplay] = useState({ state: 'none', id: 0 });
+	const [message, setMessage] = useState('');
+	const dispatch = useDispatch();
+	const contactsAPI = new ContactsAPI(baseURL, 10000);
+	
 	const {
 		ContactsListStyle,
 		InfoContainer,
@@ -32,8 +42,26 @@ const ContactsList = ({ contacts }) => {
 		setModalDisplay({ state: 'none', id: 0 });
 	};
 	
-	const removeContact = () => {
-		console.log('Remover')
+	const getToken = () => {
+		return localStorage.getItem('token');
+	}
+	
+	const removeContact = async () => {
+		const remainingContacts = contacts.filter(({ id }) => modalDisplay.id !== id);
+		const response = await contactsAPI.deleteContact(modalDisplay.id, getToken());
+		
+		if (response instanceof ErrorCreator) {
+			setMessage(response.message);
+		} else {
+			setMessage('Contato excluido com successo!');
+			dispatch(addContacts(remainingContacts));
+		}
+		
+		setTimeout(() => {
+			setMessage('');
+		}, 3000);
+		
+		setModalDisplay({ state: 'none', id: 0 });
 	}
 
 	return (
@@ -57,6 +85,7 @@ const ContactsList = ({ contacts }) => {
 					Adicionar novo contato
 				</Button>
 			</InfoContainer>
+			<Paragraph>{ message }</Paragraph>
 			<ContactsTable>
 				<thead>
 					<TableHeaderRow>
