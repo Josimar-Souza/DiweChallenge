@@ -11,6 +11,10 @@ const Button = (props) => {
     backGroundColor,
     textColor,
     type,
+    margin,
+    border,
+    transition,
+    scaleAnimation,
   } = props;
 
   return (
@@ -21,6 +25,10 @@ const Button = (props) => {
       backGroundColor={ backGroundColor }
       textColor={ textColor }
       type={ type }
+      margin={ margin }
+      border={ border }
+      transition={ transition }
+      scaleAnimation={ scaleAnimation }
     >
       { children }
     </ButtonStyle>
@@ -33,6 +41,10 @@ Button.defaultProps = {
   backGroundColor: '#12295B',
   textColor: 'white',
   type: 'button',
+  margin: '10px 0',
+  border: 'none',
+  transition: '0.2s',
+  scaleAnimation: 'scale(1.2, 1.2)'
 }
 
 Button.propTypes = {
@@ -43,6 +55,10 @@ Button.propTypes = {
   backGroundColor: PropTypes.string,
   textColor: PropTypes.string,
   type: PropTypes.string,
+  margin: PropTypes.string,
+  border: PropTypes.string,
+  transition: PropTypes.string,
+  scaleAnimation: PropTypes.string,
 }
 
 export default Button;
