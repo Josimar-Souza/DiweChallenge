@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ContactsListStyle';
@@ -7,10 +7,11 @@ import Button from '../../atoms/Button';
 import TableHeader from '../../atoms/TableHeader';
 import ArrowDown from '../../Images/Icons/chevron-down.svg';
 import TableRow from '../../molecules/TableRow';
+import Modal from '../../molecules/Modal';
 
 const ContactsList = ({ contacts }) => {
 	const navigate = useNavigate();
-
+	const [modalDisplay, setModalDisplay] = useState('none');
 	const {
 		ContactsListStyle,
 		InfoContainer,
@@ -25,10 +26,12 @@ const ContactsList = ({ contacts }) => {
 	
 	const onRemoveButtonClick = () => {
 		console.log('Clicou pra remover!');
+		setModalDisplay('block');
 	}
 
 	return (
 		<ContactsListStyle>
+			<Modal display={ modalDisplay } />
 			<InfoContainer>
 				<Paragraph
 					fontWeight='700'

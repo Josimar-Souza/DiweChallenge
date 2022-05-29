@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ButtonStyle = styled.button`
   align-items: center;
   border-radius: 5px;
-  border: none;
+  border: ${({ border }) => border};
   background-color: ${( { backGroundColor }) => backGroundColor};
   color: ${({ textColor }) => textColor};
   display flex;
@@ -13,12 +13,12 @@ const ButtonStyle = styled.button`
   justify-content: space-around;
   margin ${({ margin }) => margin};
   padding: 10px;
-  transition: 0.2s;
+  transition: ${({ transition }) => transition};
   width: ${({ width }) => width};
 
   :hover {
     cursor: pointer;
-    transform: scale(1.2, 1.2);
+    transform: ${({ scaleAnimation }) => scaleAnimation};
   }
 `;
 
