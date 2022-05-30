@@ -18,6 +18,9 @@ const Routes = () => {
 			<Route exact path='/contacts/add' element={ <PrivateRoutes /> }>
         <Route exact path='/contacts/add' element={ <Pages.AddContactsPage /> } />
 			</Route>
+			<Route exact path='/contacts/edit/:id' element={ <PrivateRoutes /> }>
+				<Route exact path='/contacts/edit/:id' element={ <Pages.UpdateContactsPage /> } />
+			</Route>
 		</RouterRotes>
 	);
 }
