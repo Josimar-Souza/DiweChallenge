@@ -21,7 +21,7 @@ const InputLabel = (props) => {
 			width={ width }
 			height={ height }
 		>
-			<Paragraph textColor={labelTextColor}>{ label }</Paragraph>
+			<Paragraph mobileTextAlign='left' textColor={labelTextColor}>{ label }</Paragraph>
 			<Input
 				placeHolder={ placeHolder }
 				onChange={ onChange }
