@@ -9,6 +9,7 @@ import InputLabel from '../../molecules/InputLabel';
 import ContactsAPI from '../../api/contactsAPI';
 import getLocalStorageItems from '../../utils/getLocalStorageItems'
 import ErrorCreator from '../../utils/ErrorCreator';
+import LoadingMessage from '../../molecules/LoadingMessage';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
@@ -60,54 +61,64 @@ const UpdateContactForm = ({ contactId }) => {
 			setMessage('');
 		}, 3000);
 	}
-
-	return (
-		<UpdateContactFormStyle>
-			<Title textColor='blue'>{`Atualize o contato de ${name}`}</Title>
-			<Paragraph
-				fontSize='20px'
-			>
-				Altere as informações para atualizar o contato!
-			</Paragraph>
-			<Paragraph
-				fontSize='18px'
-			>
-				{ message }
-			</Paragraph>
-			<InputLabel
-				label='Nome Completo'
-				value={ contactInfo.name }
-				width='90%'
-				onChange={ onInputChange }
-				name='name'
-			/>
-			<EmailPhoneContainer>
-				<InputLabel
-					label='Email'
-					value={ contactInfo.email }
-					width='45%'
-					type='email'
-					onChange={ onInputChange }
-					name='email'
-				/>
-				<InputLabel
-					label='Celular'
-					value={ contactInfo.mobile }
-					width='45%'
-					onChange={ onInputChange }
-					name='mobile'
-				/>
-			</EmailPhoneContainer>
-			<Button
-				width='90%'
-				margin='30px 0'
-				scaleAnimation='scale(1.1, 1.1)'
-				onClick={ onUpdateButtonClick }
-			>
-				Atualizar contato
-			</Button>
-		</UpdateContactFormStyle>
-	);
+	
+	const getForm = () => {
+		if (contactInfo.email !== '') {
+			return (
+				<UpdateContactFormStyle>
+					<Title textColor='blue'>{`Atualize o contato de ${name}`}</Title>
+					<Paragraph
+						fontSize='20px'
+					>
+						Altere as informações para atualizar o contato!
+					</Paragraph>
+					<Paragraph
+						fontSize='18px'
+					>
+						{ message }
+					</Paragraph>
+					<InputLabel
+						label='Nome Completo'
+						value={ contactInfo.name }
+						width='90%'
+						onChange={ onInputChange }
+						name='name'
+					/>
+					<EmailPhoneContainer>
+						<InputLabel
+							label='Email'
+							value={ contactInfo.email }
+							width='45%'
+							type='email'
+							onChange={ onInputChange }
+							name='email'
+						/>
+						<InputLabel
+							label='Celular'
+							value={ contactInfo.mobile }
+							width='45%'
+							onChange={ onInputChange }
+							name='mobile'
+						/>
+					</EmailPhoneContainer>
+					<Button
+						width='90%'
+						margin='30px 0'
+						scaleAnimation='scale(1.1, 1.1)'
+						onClick={ onUpdateButtonClick }
+					>
+						Atualizar contato
+					</Button>
+				</UpdateContactFormStyle>
+			);
+		}
+		
+		return (
+			<LoadingMessage />
+		);
+	}
+	
+	return getForm()
 };
 
 UpdateContactForm.propTypes = {
