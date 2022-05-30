@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import UpdateContactsTemplateStyle from './updateContactsTemplateStyle';
 import Header from '../../organisms/Header';
 import UpdateContactForm from '../../organisms/UpdateContactForm';
 
-const UpdateContactsTemplate = () => {
+const UpdateContactsTemplate = ({ contactId }) => {
 	return (
 		<UpdateContactsTemplateStyle>
 			<Header backPath='/contacts' />
-			<UpdateContactForm />
+			<UpdateContactForm contactId={ contactId } />
 		</UpdateContactsTemplateStyle>
 	);
+};
+
+UpdateContactsTemplate.propTypes = {
+	contactId: PropTypes.string.isRequired,
 };
 
 export default UpdateContactsTemplate;

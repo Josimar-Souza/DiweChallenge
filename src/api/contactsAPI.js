@@ -32,7 +32,7 @@ class ContactsAPI {
 				},
 			});
 	
-			console.log(data);
+			return data;
 		} catch(error) {
 			console.log(error.message);
 			return new ErrorCreator('Não foi possível listar o contato');
