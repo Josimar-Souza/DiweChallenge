@@ -14,13 +14,14 @@ const InputLabel = (props) => {
 		placeHolder,
 		label,
 		type,
+		labelTextColor,
 	} = props;
 	return (
 		<InputLabelStyle
 			width={ width }
 			height={ height }
 		>
-			<Paragraph>{ label }</Paragraph>
+			<Paragraph textColor={labelTextColor}>{ label }</Paragraph>
 			<Input
 				placeHolder={ placeHolder }
 				onChange={ onChange }
@@ -39,6 +40,7 @@ InputLabel.defaultProps = {
 	placeHolder: 'placeHolder',
 	label: 'Label',
 	type: 'text',
+	labelTextColor: 'black',
 }
 
 InputLabel.propTypes = {
@@ -50,6 +52,7 @@ InputLabel.propTypes = {
 	placeHolder: PropTypes.string,
 	label: PropTypes.string,
 	type: PropTypes.string,
+	labelTextColor: PropTypes.string,
 }
 
 export default InputLabel;
