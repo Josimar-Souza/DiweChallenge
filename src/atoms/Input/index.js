@@ -31,7 +31,7 @@ Input.defaultProps = {
   placeHolder: '',
   disabled: false,
   width: '100%',
-  height: '20px',
+  height: 'fit-content',
   type: 'text',
   name: '',
 };

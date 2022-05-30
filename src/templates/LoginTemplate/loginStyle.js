@@ -32,6 +32,7 @@ const FormSection = styled.div`
 	width: 40%;
 	
 	@media(max-width: 390px) {
+		align-items: center;
 		display: flex;
 		flex-direction: column;
 		height: 100vh;

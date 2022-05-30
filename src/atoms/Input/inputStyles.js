@@ -9,6 +9,13 @@ const InputStyle = styled.input`
   height: ${({ height }) => height};
   padding: 10px;
   width: ${({ width }) => width};
+  
+  @media(max-width: 390px) {
+    font-size: 1.5rem;
+    height: 60px;
+    padding: 5px;
+    max-width: 96%;
+  }
 `;
 
 export default InputStyle;
