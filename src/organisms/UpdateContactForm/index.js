@@ -66,7 +66,7 @@ const UpdateContactForm = ({ contactId }) => {
 		if (contactInfo.email !== '') {
 			return (
 				<UpdateContactFormStyle>
-					<Title textColor='blue'>{`Atualize o contato de ${name}`}</Title>
+					<Title textColor='#244677'>{`Atualize o contato de ${name}`}</Title>
 					<Paragraph
 						fontSize='20px'
 					>
@@ -83,6 +83,7 @@ const UpdateContactForm = ({ contactId }) => {
 						width='90%'
 						onChange={ onInputChange }
 						name='name'
+						labelTextColor='#244677'
 					/>
 					<EmailPhoneContainer>
 						<InputLabel
@@ -92,6 +93,7 @@ const UpdateContactForm = ({ contactId }) => {
 							type='email'
 							onChange={ onInputChange }
 							name='email'
+							labelTextColor='#244677'
 						/>
 						<InputLabel
 							label='Celular'
@@ -99,6 +101,7 @@ const UpdateContactForm = ({ contactId }) => {
 							width='45%'
 							onChange={ onInputChange }
 							name='mobile'
+							labelTextColor='#244677'
 						/>
 					</EmailPhoneContainer>
 					<Button
