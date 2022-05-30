@@ -1,8 +1,12 @@
 import React from 'react';
+import UpdateContactsTemplateStyle from './updateContactsTemplateStyle';
+import Header from '../../organisms/Header';
 
 const UpdateContactsTemplate = () => {
 	return (
-		<h1>Update Contacts Template</h1>
+		<UpdateContactsTemplateStyle>
+			<Header backPath='/contacts' />
+		</UpdateContactsTemplateStyle>
 	);
 };
 
