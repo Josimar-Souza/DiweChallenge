@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const ButtonsContainer = styled.div`
+	align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 40%;
+`;
+
 const PhoneIcon = styled.img`
 	width: 18%;
 `;
@@ -38,6 +46,7 @@ const styles = {
 	NameEmailContainer,
 	MobilePhoneContainer,
 	PhoneIcon,
+	ButtonsContainer,
 }
 
 export default styles;

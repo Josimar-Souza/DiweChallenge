@@ -23,9 +23,9 @@ const ButtonStyle = styled.button`
   
   @media(max-width: 390px) {
     font-size: ${({ mobileFontSize }) => mobileFontSize};
-    margin: 50px auto;
+    margin: ${({ mobileMargin }) => mobileMargin};
     width: 80%;
-    
+
     :hover {
       cursor: pointer;
       transform: scale(1, 1);
