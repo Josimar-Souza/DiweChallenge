@@ -70,8 +70,9 @@ const UpdateContactForm = ({ contactId }) => {
 					{ !isMobile ? <Title textColor='#244677'>{`Atualize o contato de ${name}`}</Title> : null }
 					<Paragraph
 						fontSize='20px'
+						mobileFontSize='1.2rem'
 					>
-						Altere as informações para atualizar o contato!
+						Faça as alterações necessárias e ao terminar salve seu contato
 					</Paragraph>
 					<Paragraph
 						fontSize='18px'
@@ -115,7 +116,7 @@ const UpdateContactForm = ({ contactId }) => {
 						onClick={ onUpdateButtonClick }
 						mobileFontSize='1.8rem'
 					>
-						Atualizar contato
+						Salvar alterações
 					</Button>
 				</UpdateContactFormStyle>
 			);
