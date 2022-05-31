@@ -1,8 +1,9 @@
 import React from 'react';
+import MobileHomeTemplate from '../../templates/MobileHomeTemplate';
 
 const MobileHomePage = () => {
 	return (
-		<h1>Mobile Home Page</h1>
+		<MobileHomeTemplate />
 	);
 };
 
