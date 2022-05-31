@@ -5,7 +5,7 @@ const AddContactTemplateStyle = styled.section`
 	height: 100vh;
 	
 	@media(max-width: 390px) {
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 `;
 
