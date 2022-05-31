@@ -36,6 +36,7 @@ const MobileContactListItemStyle = styled.div`
 	border-radius: 6px;
 	display: flex;
 	justify-content: space-between;
+	margin: 1rem 0;
 	padding: 10px;
 	width: 85%;
 `;

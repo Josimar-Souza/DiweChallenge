@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MobileContactListStyle from './mobileContactListStyle';
 import MobileContactListItem from '../../molecules/MobileContactListItem';
 import Button from '../../atoms/Button';
 import Modal from '../../molecules/Modal';
+import ContactsAPI from '../../api/contactsAPI';
+import getLocalStorageItems from '../../utils/getLocalStorageItems';
+import ErrorCreator from '../../utils/ErrorCreator';
+import Paragraph from '../../atoms/Paragraph';
+import { addContacts } from '../../redux/reducers/contactsReducer';
+
+const baseURL = process.env.REACT_APP_BASE_URL;
 
 const MobileContactList = ({ contacts }) => {
 	const [modalDisplay, setModalDisplay] = useState({ state: 'none', id: 0 });
+	const [message, setMessage] = useState('');
+	const contactsAPI = new ContactsAPI(baseURL, 10000);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	const onAddButtonClick = () => {
 		navigate('/contacts/add');
 	};
@@ -20,8 +34,9 @@ const MobileContactList = ({ contacts }) => {
 	};
 	
 	const removeContact = async () => {
+		const token = getLocalStorageItems('token');
 		const remainingContacts = contacts.filter(({ id }) => modalDisplay.id !== id);
-		const response = await contactsAPI.deleteContact(modalDisplay.id, getToken());
+		const response = await contactsAPI.deleteContact(modalDisplay.id, token);
 		
 		if (response instanceof ErrorCreator) {
 			setMessage(response.message);
@@ -52,6 +67,7 @@ const MobileContactList = ({ contacts }) => {
 			>
 				Cadastrar contato
 			</Button>
+			<Paragraph>{ message }</Paragraph>
 			{
 				contacts.map(
 					(contact) =>

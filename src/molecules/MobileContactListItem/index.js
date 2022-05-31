@@ -17,7 +17,7 @@ const MobileContactListItem = ({ contact, onRemoveButtonClick }) => {
 		PhoneIcon,
 		ButtonsContainer,
 	} = styles;
-	
+
 	const getPhoneNumber = (number) => {
 		let formattedNumber = '';
 
@@ -67,8 +67,8 @@ const MobileContactListItem = ({ contact, onRemoveButtonClick }) => {
 					<Paragraph
 						mobileFontSize='1.2rem'>
 							{ getPhoneNumber(contact.mobile) }
-						</Paragraph>
-					</MobilePhoneContainer>
+					</Paragraph>
+				</MobilePhoneContainer>
 			</UserInfoContainer>
 			<ButtonsContainer>
 				<Button
@@ -83,7 +83,7 @@ const MobileContactListItem = ({ contact, onRemoveButtonClick }) => {
 				<Button
 					backGroundColor='rgba(0, 0, 0, 0)'
 					mobileMargin='0'
-					onClick={ onRemoveButtonClick }
+					onClick={ () => onRemoveButtonClick(contact.id) }
 				>
 					<img src={ trashIcon } />
 				</Button>
