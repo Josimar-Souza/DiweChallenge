@@ -16,10 +16,17 @@
 	<li>Clone o repositório para sua máquina</li>
 	<li>Navegue até a pasta do repositório</li>
 	<li>Rode o comando <code>npm install</code> para instalar todas as depêndencias</li>
+	<li>
+		crie um arquivo <code>.env</code> com a senguinte informação
+		<pre>REACT_APP_BASE_URL=https://contacts-api.prd.parceirodaconstrucao.com.br/</pre>
+	</li>
 	<li>Rode o comando <code>npm start</code> e aguarde o projeto deve abrir no seu navegador</li>
 </ol>
 
-<h2>Tecnologias utilizadas</h2>
+<h2>Deploy:</h2>
+<p>A aplicação foi publicada no heroku, um serviço de deploy na nuvem, e pode ser acessada através do link: <a href="https://diwe-challenge.herokuapp.com/" target="_blank">diwe-challenge</a></p>
+
+<h2>Tecnologias utilizadas:</h2>
 <ul>
 	<li>Axios</li>
 	<li>ESLint</li>
@@ -28,3 +35,7 @@
 	<li>Reduxjs toolkit</li>
 	<li>Styled-Components</li>
 </ul>
+
+<h2>Contato</h2>
+<a href="https://www.linkedin.com/in/josimar-souza-brito/" target="_blank">linkedin</a>
+<p>contact.josimarsouza@gmail.com</p>
