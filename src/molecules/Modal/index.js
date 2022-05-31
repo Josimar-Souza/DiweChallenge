@@ -12,12 +12,14 @@ const Modal = ({ display, closeModal, removeContact }) => {
 			<ModalStyle>
 				<Paragraph
 					textColor='black'
+					mobileFontSize='1.1rem'
 				>
 					Tem certeza que deseja excluir este contato?
 				</Paragraph>
 				<Paragraph
 					textColor='gray'
 					fontSize='18px'
+					mobileFontSize='1.1rem'
 				>
 					Após excluir, não será possivel recuperar o contato.
 				</Paragraph>
@@ -27,6 +29,9 @@ const Modal = ({ display, closeModal, removeContact }) => {
 						backGroundColor='red'
 						scaleAnimation='scale(1.1, 1.1)'
 						onClick={ removeContact }
+						mobileFontSize='1rem'
+						mobileMargin='0'
+						mobileWidth='40%'
 					>
 						Exluir contato
 					</Button>
@@ -37,6 +42,9 @@ const Modal = ({ display, closeModal, removeContact }) => {
 						border='1px solid black'
 						scaleAnimation='scale(1.1, 1.1)'
 						onClick={ closeModal }
+						mobileFontSize='1rem'
+						mobileMargin='0'
+						mobileWidth='40%'
 					>
 						Não excluir
 					</Button>
