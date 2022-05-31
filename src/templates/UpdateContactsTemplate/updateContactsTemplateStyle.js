@@ -6,7 +6,7 @@ const UpdateContactsTemplateStyle = styled.section`
 	width: 100%;
 	
 	@media(max-width: 390px) {
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 `;
 
