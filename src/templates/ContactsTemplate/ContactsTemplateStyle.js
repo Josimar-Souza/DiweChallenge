@@ -10,6 +10,7 @@ const ContactsListContainer = styled.div`
 const ContactsTemplateStyle = styled.section`
   background-color: #F7F8FC;
   height: 100vh;
+  overflow-x: hidden;
   width: 100%;
 `;
 
