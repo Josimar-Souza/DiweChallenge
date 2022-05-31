@@ -42,7 +42,7 @@ const ContactsTemplate = () => {
 			);
 		}
 		
-		return <MobileContactList />;
+		return <MobileContactList contacts={ contacts } />;
 	};
 
 	const getHeader = () => {
@@ -57,6 +57,7 @@ const ContactsTemplate = () => {
 				title='Listagem de usuários'
 				mobileFontSize='1.5rem'
 				titleMargin='0 0 0 1.8rem'
+				backPath='/'
 			/>
 		);
 	};
