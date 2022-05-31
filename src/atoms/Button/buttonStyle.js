@@ -20,6 +20,17 @@ const ButtonStyle = styled.button`
     cursor: pointer;
     transform: ${({ scaleAnimation }) => scaleAnimation};
   }
+  
+  @media(max-width: 390px) {
+    font-size: 2.5rem;
+    margin: 50px auto;
+    width: 80%;
+    
+    :hover {
+      cursor: pointer;
+      transform: scale(1, 1);
+    }
+  }
 `;
 
 export default ButtonStyle;

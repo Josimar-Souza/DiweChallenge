@@ -6,6 +6,12 @@ const ErrorContainer = styled.div`
 
 const LoginFormStyle = styled.div`
   width: 100%;
+  
+  @media(max-width: 390px) {
+    border-sizing: border-box;
+    margin: 0;
+    width: 90%;
+  }
 `;
 
 const styles = {
