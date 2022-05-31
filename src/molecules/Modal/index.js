@@ -31,7 +31,7 @@ const Modal = ({ display, closeModal, removeContact }) => {
 						onClick={ removeContact }
 						mobileFontSize='1rem'
 						mobileMargin='0'
-						mobileWidth='40%'
+						mobileWidth='45%'
 					>
 						Exluir contato
 					</Button>
@@ -44,7 +44,7 @@ const Modal = ({ display, closeModal, removeContact }) => {
 						onClick={ closeModal }
 						mobileFontSize='1rem'
 						mobileMargin='0'
-						mobileWidth='40%'
+						mobileWidth='45%'
 					>
 						Não excluir
 					</Button>

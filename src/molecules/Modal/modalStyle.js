@@ -35,7 +35,7 @@ const ModalStyle = styled.div`
 	@media(max-width: 390px) {
 		left: 50%;
 		top: 50%;
-		transform: translate(-55%, -50%);
+		transform: translate(-50%, -50%);
 		width: 80%;
 	}
 `;
