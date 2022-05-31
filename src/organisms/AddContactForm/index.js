@@ -57,9 +57,9 @@ const AddContactForm = () => {
 	
 	return (
 		<AddContactFormStyle>
-			<Paragraph>
-				{ !isMobile ? 'Cadastre um novo contato' : null}
-			</Paragraph>
+			{
+				!isMobile ?<Paragraph>Cadastre um novo contato</Paragraph> : null
+			}
 			<Paragraph
 				textColor='gray'
 				fontSize='18px'
