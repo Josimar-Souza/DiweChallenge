@@ -10,7 +10,7 @@ const MobileHomeTemplateStyle = styled.section`
 	flex-direction: column;
 	height: 100vh;
 	justify-content: space-around;
-	overflow: hidden;
+	overflow-x: hidden;
 	text-align: center;
 	width: 100%;
 `;
