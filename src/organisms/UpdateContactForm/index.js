@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { isMobile } from 'react-device-detect';
 import styles from './updateContactFormStyle';
 import Title from '../../atoms/Title';
 import Paragraph from '../../atoms/Paragraph';
@@ -66,7 +67,7 @@ const UpdateContactForm = ({ contactId }) => {
 		if (contactInfo.email !== '') {
 			return (
 				<UpdateContactFormStyle>
-					<Title textColor='#244677'>{`Atualize o contato de ${name}`}</Title>
+					{ !isMobile ? <Title textColor='#244677'>{`Atualize o contato de ${name}`}</Title> : null }
 					<Paragraph
 						fontSize='20px'
 					>
@@ -84,6 +85,7 @@ const UpdateContactForm = ({ contactId }) => {
 						onChange={ onInputChange }
 						name='name'
 						labelTextColor='#244677'
+						maxMobileWidth='90%'
 					/>
 					<EmailPhoneContainer>
 						<InputLabel
@@ -94,6 +96,7 @@ const UpdateContactForm = ({ contactId }) => {
 							onChange={ onInputChange }
 							name='email'
 							labelTextColor='#244677'
+							maxMobileWidth='92%'
 						/>
 						<InputLabel
 							label='Celular'
@@ -102,13 +105,15 @@ const UpdateContactForm = ({ contactId }) => {
 							onChange={ onInputChange }
 							name='mobile'
 							labelTextColor='#244677'
+							maxMobileWidth='92%'
 						/>
 					</EmailPhoneContainer>
 					<Button
-						width='90%'
+						width='100%'
 						margin='30px 0'
 						scaleAnimation='scale(1.1, 1.1)'
 						onClick={ onUpdateButtonClick }
+						mobileFontSize='1.8rem'
 					>
 						Atualizar contato
 					</Button>
