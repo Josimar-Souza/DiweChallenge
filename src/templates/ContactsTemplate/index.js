@@ -9,6 +9,7 @@ import ContactsList from '../../organisms/ContactsList';
 import MobileContactList from '../../organisms/MobileContactList';
 import ContactsAPI from '../../api/contactsAPI';
 import { addContacts } from '../../redux/reducers/contactsReducer';
+import getLocalStorageItems from '../../utils/getLocalStorageItems';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
@@ -21,7 +22,7 @@ const ContactsTemplate = () => {
 	useEffect(() => {
 		const getContactList = async () => {
 			const contactsAPI = new ContactsAPI(baseURL, 10000);
-			const token = localStorage.getItem('token');
+			const token = getLocalStorageItems('token');
 			
 			if (!token) {
 				navigate('/login');
