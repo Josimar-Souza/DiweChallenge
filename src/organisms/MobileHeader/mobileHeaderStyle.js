@@ -11,6 +11,7 @@ const MobileHeaderTitleContainer = styled.div`
 `;
 
 const MobileHeaderStyle = styled.div`
+	align-items: center;
 	border-bottom: 1px solid gray;
 	display: flex;
 	justify-content: space-between;

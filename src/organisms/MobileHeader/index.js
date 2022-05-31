@@ -5,7 +5,14 @@ import styles from './mobileHeaderStyle';
 import Title from '../../atoms/Title';
 import ArrowLeft from '../../Images/Icons/chevron-left.svg';
 
-const MobileHeader = ({ title, backPath, titleMargin }) => {
+const MobileHeader = (props) => {
+	const {
+		title,
+		backPath,
+		titleMargin,
+		mobileFontSize,
+	} = props;
+
 	const { MobileHeaderStyle, MobileHeaderIcon, MobileHeaderTitleContainer } = styles;
 	const navigate = useNavigate();
 	
@@ -22,6 +29,7 @@ const MobileHeader = ({ title, backPath, titleMargin }) => {
 			<MobileHeaderTitleContainer>
 				<Title
 					margin={ titleMargin }
+					mobileFontSize={ mobileFontSize }
 				>
 					{ title }
 				</Title>
@@ -32,12 +40,14 @@ const MobileHeader = ({ title, backPath, titleMargin }) => {
 
 MobileHeader.defaultProps = {
 	titleMargin: '0 0 0 4.5rem',
+	mobileFontSize: '3rem',
 }
 
 MobileHeader.propTypes = {
 	title: PropTypes.string.isRequired,
 	backPath: PropTypes.string.isRequired,
 	titleMargin: PropTypes.string,
+	mobileFontSize: PropTypes.string,
 };
 
 export default MobileHeader;
