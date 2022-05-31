@@ -5,6 +5,7 @@ import LoginForm from '../../organisms/LoginForm';
 import Title from '../../atoms/Title';
 import Paragraph from '../../atoms/Paragraph';
 import Logo from '../../Images/Logo.png';
+import MobileHeader from '../../organisms/MobileHeader';
 
 const LoginTemplate = () => {
 	const {
@@ -16,7 +17,6 @@ const LoginTemplate = () => {
 	} = styles;
 	
 	const getLogo = () => {
-		console.log(isMobile);
 		if (!isMobile) {
 			return (
 				<LogoSection>
@@ -27,10 +27,21 @@ const LoginTemplate = () => {
 		
 		return null;
 	}
+	
+	const getHeader = () => {
+		if (isMobile) {
+			return (
+				<MobileHeader title='Login' backPath='/'/>
+			);
+		}
+		
+		return null;
+	}
 
 	return (
 		<LoginStyle>
 			{ getLogo() }
+			{ getHeader() }
 			<FormSection>
 				<InstructionsSection>
 					<Title>

@@ -7,11 +7,13 @@ const Title = (props) => {
     children,
     textColor,
     fontSize,
+    margin,
   } = props;
   return (
     <TitleStyle
       textColor={ textColor }
       fontSize={ fontSize }
+      margin={ margin }
     >
       { children }
     </TitleStyle>
@@ -21,12 +23,14 @@ const Title = (props) => {
 Title.defaultProps = {
   textColor: '#12295B',
   fontSize: '2.2rem',
+  margin: '0',
 }
 
 Title.propTypes = {
   children: PropTypes.node.isRequired,
   textColor: PropTypes.string,
   fontSize: PropTypes.string,
+  margin: PropTypes.string,
 }
 
 export default Title;
