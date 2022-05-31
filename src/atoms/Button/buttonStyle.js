@@ -22,7 +22,7 @@ const ButtonStyle = styled.button`
   }
   
   @media(max-width: 390px) {
-    font-size: 2.5rem;
+    font-size: ${({ mobileFontSize }) => mobileFontSize};
     margin: 50px auto;
     width: 80%;
     

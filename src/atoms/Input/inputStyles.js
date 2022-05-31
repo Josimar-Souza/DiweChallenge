@@ -14,7 +14,7 @@ const InputStyle = styled.input`
     font-size: 1.5rem;
     height: 60px;
     padding: 5px;
-    max-width: 96%;
+    max-width: ${({ maxMobileWidth }) => maxMobileWidth};
   }
 `;
 

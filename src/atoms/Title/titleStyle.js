@@ -8,7 +8,7 @@ const TitleStyle = styled.h1`
   margin: ${({ margin }) => margin};
 
   @media(max-width: 390px) {
-    font-size: 3rem;
+    font-size: ${({ mobileFontSize }) => mobileFontSize};
   }
 `;
 

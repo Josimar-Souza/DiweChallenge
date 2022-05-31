@@ -15,6 +15,7 @@ const Button = (props) => {
     border,
     transition,
     scaleAnimation,
+    mobileFontSize,
   } = props;
 
   return (
@@ -29,6 +30,7 @@ const Button = (props) => {
       border={ border }
       transition={ transition }
       scaleAnimation={ scaleAnimation }
+      mobileFontSize={ mobileFontSize }
     >
       { children }
     </ButtonStyle>
@@ -44,7 +46,8 @@ Button.defaultProps = {
   margin: '10px 0',
   border: 'none',
   transition: '0.2s',
-  scaleAnimation: 'scale(1.2, 1.2)'
+  scaleAnimation: 'scale(1.2, 1.2)',
+  mobileFontSize: '2.5rem',
 }
 
 Button.propTypes = {
@@ -59,6 +62,7 @@ Button.propTypes = {
   border: PropTypes.string,
   transition: PropTypes.string,
   scaleAnimation: PropTypes.string,
+  mobileFontSize: PropTypes.string,
 }
 
 export default Button;

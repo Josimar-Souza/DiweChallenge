@@ -15,6 +15,7 @@ const InputLabel = (props) => {
 		label,
 		type,
 		labelTextColor,
+		maxMobileWidth,
 	} = props;
 	return (
 		<InputLabelStyle
@@ -28,6 +29,7 @@ const InputLabel = (props) => {
 				value={ value }
 				type={ type }
 				name={ name }
+				maxMobileWidth={ maxMobileWidth }
 			/>
 		</InputLabelStyle>
 	);
@@ -41,6 +43,7 @@ InputLabel.defaultProps = {
 	label: 'Label',
 	type: 'text',
 	labelTextColor: 'black',
+	maxMobileWidth: '96%',
 }
 
 InputLabel.propTypes = {
@@ -53,6 +56,7 @@ InputLabel.propTypes = {
 	label: PropTypes.string,
 	type: PropTypes.string,
 	labelTextColor: PropTypes.string,
+	maxMobileWidth: PropTypes.string,
 }
 
 export default InputLabel;
