@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './mobileContactListItemStyle';
 import Paragraph from '../../atoms/Paragraph';
@@ -6,7 +7,8 @@ import phoneIcon from '../../Images/Icons/smartphone.svg';
 import Button from '../../atoms/Button';
 import trashIcon from '../../Images/Icons/trash-mobile.svg';
 
-const MobileContactListItem = ({ contact }) => {
+const MobileContactListItem = ({ contact, onRemoveButtonClick }) => {
+	const navigate = useNavigate();
 	const {
 		MobileContactListItemStyle,
 		UserInfoContainer,
@@ -41,6 +43,10 @@ const MobileContactListItem = ({ contact }) => {
 
 		return formattedNumber;
 	};
+	
+	const onEditButtonClick = () => {
+		navigate(`/contacts/edit/${contact.id}`)
+	}
 
 	return (
 		<MobileContactListItemStyle>
@@ -70,12 +76,14 @@ const MobileContactListItem = ({ contact }) => {
 					textColor='gray'
 					mobileFontSize='1.2rem'
 					mobileMargin='0'
+					onClick={ onEditButtonClick }
 				>
 					Editar
 				</Button>
 				<Button
 					backGroundColor='rgba(0, 0, 0, 0)'
 					mobileMargin='0'
+					onClick={ onRemoveButtonClick }
 				>
 					<img src={ trashIcon } />
 				</Button>
@@ -89,7 +97,9 @@ MobileContactListItem.propTypes = {
 		name: PropTypes.string.isRequired,
 		email: PropTypes.string.isRequired,
 		mobile: PropTypes.string.isRequired,
+		id: PropTypes.number.isRequired,
 	}).isRequired,
+	onRemoveButtonClick: PropTypes.func.isRequired,
 };
 
 export default MobileContactListItem;
