@@ -1,13 +1,24 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { Routes as RouterRotes, Route, Navigate } from 'react-router-dom';
 import Pages from '../pages';
 import PublicRoutes from './publicRoutes';
 import PrivateRoutes from './privateRoutes';
 
 const Routes = () => {
+	const getHomePage = () => {
+		if (!isMobile) {
+			return (
+				<Route exact path='/' element={ <Navigate to='/login' /> } />
+			);
+		}
+		
+		return <Route exact path='/' element={ <Pages.MobileHomePage /> } />;
+	}
+
 	return (
 		<RouterRotes>
-			<Route exact path='/' element={ <Navigate to='/login' /> } />
+			{ getHomePage() }
 			<Route exact path='/login' element={ <PublicRoutes /> }>
 				<Route exact path='/login' element={ <Pages.LoginPage /> } />
 			</Route>
