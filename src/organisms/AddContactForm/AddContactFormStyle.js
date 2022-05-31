@@ -4,6 +4,13 @@ const EmailPhoneSection = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 90%;
+	
+	@media(max-width: 390px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+	}
 `;
 
 const AddContactFormStyle = styled.div`
@@ -16,6 +23,12 @@ const AddContactFormStyle = styled.div`
 	margin: 5rem auto;
 	padding: 10px;
 	width: 80%;
+	
+	@media(max-width: 390px) {
+		background-color: rgba(0, 0, 0, 0);
+		box-shadow: none;
+		width: 100%;
+	}
 `;
 
 const styles = {

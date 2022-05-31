@@ -12,6 +12,7 @@ const Input = (props) => {
     height,
     type,
     name,
+    maxMobileWidth,
   } = props;
   return (
     <InputStyle
@@ -23,6 +24,7 @@ const Input = (props) => {
       height={ height }
       type={ type }
       name={ name }
+      maxMobileWidth={ maxMobileWidth }
     />
   );
 };
@@ -34,6 +36,7 @@ Input.defaultProps = {
   height: 'fit-content',
   type: 'text',
   name: '',
+  maxMobileWidth: '96%',
 };
 
 Input.propTypes = {
@@ -45,6 +48,7 @@ Input.propTypes = {
   height: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
+  maxMobileWidth: PropTypes.string,
 };
 
 export default Input;

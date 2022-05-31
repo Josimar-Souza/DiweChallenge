@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 import styles from './AddContactFormStyle';
 import Paragraph from '../../atoms/Paragraph';
 import InputLabel from '../../molecules/InputLabel';
@@ -56,7 +57,9 @@ const AddContactForm = () => {
 	
 	return (
 		<AddContactFormStyle>
-			<Paragraph>Cadastre um novo contato</Paragraph>
+			<Paragraph>
+				{ !isMobile ? 'Cadastre um novo contato' : null}
+			</Paragraph>
 			<Paragraph
 				textColor='gray'
 				fontSize='18px'
@@ -75,6 +78,7 @@ const AddContactForm = () => {
 				name='name'
 				onChange={ onInputChange }
 				value={ contactInfo.name }
+				maxMobileWidth='90%'
 			/>
 			<EmailPhoneSection>
 				<InputLabel
@@ -85,6 +89,7 @@ const AddContactForm = () => {
 					onChange={ onInputChange }
 					value={ contactInfo.email }
 					type='email'
+					maxMobileWidth='92%'
 				/>
 				<InputLabel
 					width='45%'
@@ -93,12 +98,14 @@ const AddContactForm = () => {
 					name='mobile'
 					onChange={ onInputChange }
 					value={ contactInfo.mobile }
+					maxMobileWidth='92%'
 				/>
 			</EmailPhoneSection>
 			<Button
-				width='90%'
+				width='100%'
 				scaleAnimation='scale(1.1, 1.1)'
 				onClick={ onAddContactClick }
+				mobileFontSize='1.8rem'
 			>
 				Cadastrar contato
 			</Button>
