@@ -9,6 +9,7 @@ const Paragraph = (props) => {
     fontSize,
     fontWeight,
     mobileTextAlign,
+    mobileFontSize,
   } = props;
   return (
     <ParagraphStyle
@@ -16,6 +17,7 @@ const Paragraph = (props) => {
       fontSize={ fontSize }
       fontWeight={ fontWeight }
       mobileTextAlign={ mobileTextAlign }
+      mobileFontSize={ mobileFontSize }
     >
       { children }
     </ParagraphStyle>
@@ -26,7 +28,8 @@ Paragraph.defaultProps = {
   textColor: '#12295B',
   fontSize: '1.5rem',
   fontWeight: '600',
-  mobileTextAlign: 'center'
+  mobileTextAlign: 'center',
+  mobileFontSize: '1.5rem'
 }
 
 Paragraph.propTypes = {
@@ -35,6 +38,7 @@ Paragraph.propTypes = {
   fontSize: PropTypes.string,
   fontWeight: PropTypes.string,
   mobileTextAlign: PropTypes.string,
+  mobileFontSize: PropTypes.string,
 }
 
 export default Paragraph;

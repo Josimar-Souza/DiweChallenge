@@ -4,6 +4,15 @@ const EmailPhoneContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 90%;
+	
+	@media(max-width: 390px) {
+		display: flex;
+		flex-direction: column;
+		height: 18rem;
+		justify-content: space-between;
+		margin-top: 2rem;
+		width: 100%;
+	}
 `;
 
 const UpdateContactFormStyle = styled.div`
@@ -16,6 +25,17 @@ const UpdateContactFormStyle = styled.div`
 	margin: 50px auto;
 	padding: 10px;
 	width: 90%;
+	
+	@media(max-width: 390px) {
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
+		box-shadow: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 1.5rem auto;
+		width: 100%;
+	}
 `;
 
 const styles = {
